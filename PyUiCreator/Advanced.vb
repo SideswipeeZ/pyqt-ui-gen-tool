@@ -83,6 +83,10 @@
         finalAll = finalAll + classname + vbCrLf
         'Load Init from File
         Dim wholeClass = System.Text.Encoding.UTF8.GetString(My.Resources.classinit)
+        'Replace Class Name if entered
+        If txt_ClassName.Text <> Nothing Then
+            wholeClass = Replace(wholeClass, "MyWindow", txt_ClassName.Text)
+        End If
         'Replace WinTitle If Entered
         If txt_WinTitle.Text <> Nothing Then
             wholeClass = Replace(wholeClass, "TITLE_HERE", txt_WinTitle.Text)

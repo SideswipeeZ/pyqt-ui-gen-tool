@@ -119,9 +119,9 @@ Partial Class MainWindow
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Label1.Location = New System.Drawing.Point(97, 120)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(133, 13)
+        Me.Label1.Size = New System.Drawing.Size(139, 13)
         Me.Label1.TabIndex = 8
-        Me.Label1.Text = "PyQt Code Generator V0.5"
+        Me.Label1.Text = "PyQt Code Generator V0.51"
         '
         'MainWindow
         '
