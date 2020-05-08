@@ -1,10 +1,15 @@
 ﻿Public Class Advanced
+    'Houdini Variable for Import
+    Dim imHou As Boolean = False
 
     Public Shared Sub Advanced_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Sets the Value to the First Item by Default.
         Advanced.txtOut.Text = ""
         Advanced.cmb_pan.SelectedIndex = 0
         Advanced.Size = New Size(419, 722)
+
+        'Houdini Import Var
+        Dim imHou As Boolean = False
     End Sub
 
     Public Shared Sub bttn_main_Click(sender As Object, e As EventArgs) Handles bttn_main.Click
@@ -39,6 +44,9 @@
 
         'Write Normal Imports
         Dim normImp As String = "import os, sys" & vbCrLf
+        If imHou = True Then
+            normImp = "import os, sys, hou" & vbCrLf
+        End If
         finalAll = finalAll + normImp + vbCrLf
 
 
@@ -95,7 +103,19 @@
         If txt_FilePath.Text <> Nothing Then
             wholeClass = Replace(wholeClass, "PATH_HERE", txt_FilePath.Text)
         End If
-        finalAll = finalAll + wholeClass + vbCrLf + vbCrLf
+
+        If imHou = False Then
+            finalAll = finalAll + wholeClass + vbCrLf + vbCrLf
+        ElseIf imHou = True Then
+            finalAll = finalAll + wholeClass
+        End If
+
+        'Houdini StyleSheet Inherit
+        If imHou = True Then
+            Dim houStyle As String = vbTab + vbTab + "stylesheet = hou.qt.styleSheet()" + vbCrLf + vbTab + vbTab + "self.setStyleSheet(stylesheet)" + vbCrLf + vbCrLf
+            finalAll = finalAll + houStyle
+        End If
+
 
 
         'Load Interface Creation
@@ -178,4 +198,11 @@
         End If
     End Sub
 
+    Public Sub chk_houStyle_CheckedChanged(sender As Object, e As EventArgs) Handles chk_houStyle.CheckedChanged
+        If chk_houStyle.Checked = True Then
+            imHou = True
+        ElseIf chk_houStyle.Checked = False Then
+            imHou = False
+        End If
+    End Sub
 End Class

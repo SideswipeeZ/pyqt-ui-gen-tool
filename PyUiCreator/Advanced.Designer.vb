@@ -50,6 +50,7 @@ Partial Class Advanced
         Me.bttn_Pre = New System.Windows.Forms.Button()
         Me.bttn_toggle = New System.Windows.Forms.Button()
         Me.txtOut = New System.Windows.Forms.RichTextBox()
+        Me.chk_houStyle = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -231,6 +232,7 @@ Partial Class Advanced
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.chk_houStyle)
         Me.GroupBox4.Controls.Add(Me.txt_Size2)
         Me.GroupBox4.Controls.Add(Me.txt_Size1)
         Me.GroupBox4.Controls.Add(Me.Label5)
@@ -245,7 +247,7 @@ Partial Class Advanced
         '
         'txt_Size2
         '
-        Me.txt_Size2.Location = New System.Drawing.Point(88, 90)
+        Me.txt_Size2.Location = New System.Drawing.Point(88, 58)
         Me.txt_Size2.Name = "txt_Size2"
         Me.txt_Size2.Size = New System.Drawing.Size(70, 20)
         Me.txt_Size2.TabIndex = 4
@@ -253,7 +255,7 @@ Partial Class Advanced
         '
         'txt_Size1
         '
-        Me.txt_Size1.Location = New System.Drawing.Point(12, 90)
+        Me.txt_Size1.Location = New System.Drawing.Point(12, 57)
         Me.txt_Size1.Name = "txt_Size1"
         Me.txt_Size1.Size = New System.Drawing.Size(70, 20)
         Me.txt_Size1.TabIndex = 3
@@ -262,16 +264,16 @@ Partial Class Advanced
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 70)
+        Me.Label5.Location = New System.Drawing.Point(9, 42)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(84, 13)
+        Me.Label5.Size = New System.Drawing.Size(104, 13)
         Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Size of Window:"
+        Me.Label5.Text = "Size of Window: X:Y"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 37)
+        Me.Label4.Location = New System.Drawing.Point(6, 19)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 1
@@ -281,7 +283,7 @@ Partial Class Advanced
         '
         Me.cmb_pan.FormattingEnabled = True
         Me.cmb_pan.Items.AddRange(New Object() {"Shelf", "Panel"})
-        Me.cmb_pan.Location = New System.Drawing.Point(62, 33)
+        Me.cmb_pan.Location = New System.Drawing.Point(62, 15)
         Me.cmb_pan.Name = "cmb_pan"
         Me.cmb_pan.Size = New System.Drawing.Size(117, 21)
         Me.cmb_pan.TabIndex = 0
@@ -315,6 +317,16 @@ Partial Class Advanced
         Me.txtOut.Size = New System.Drawing.Size(402, 560)
         Me.txtOut.TabIndex = 15
         Me.txtOut.Text = ""
+        '
+        'chk_houStyle
+        '
+        Me.chk_houStyle.AutoSize = True
+        Me.chk_houStyle.Location = New System.Drawing.Point(12, 88)
+        Me.chk_houStyle.Name = "chk_houStyle"
+        Me.chk_houStyle.Size = New System.Drawing.Size(146, 17)
+        Me.chk_houStyle.TabIndex = 5
+        Me.chk_houStyle.Text = "Inherit Houdini Stylesheet"
+        Me.chk_houStyle.UseVisualStyleBackColor = True
         '
         'Advanced
         '
@@ -376,4 +388,5 @@ Partial Class Advanced
     Friend WithEvents bttn_Pre As Button
     Friend WithEvents bttn_toggle As Button
     Friend WithEvents txtOut As RichTextBox
+    Friend WithEvents chk_houStyle As CheckBox
 End Class

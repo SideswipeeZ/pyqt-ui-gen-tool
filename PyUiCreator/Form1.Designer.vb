@@ -142,7 +142,7 @@ Partial Class MainWindow
         Me.MaximizeBox = False
         Me.Name = "MainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PyQt UI Gen Tools (V.0.5)"
+        Me.Text = "PyQt UI Gen Tools (V.0.51)"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
